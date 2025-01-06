@@ -1,6 +1,6 @@
 {
     "name": "coolmacjedi/breadcrumbs",
-    "description": "Laravelbreadcrumbs",
+    "description": "Laravel breadcrumbs",
     "type": "library",
     "require": {
         "laravel/framework": "^11.37"
