@@ -1,5 +1,5 @@
 {
-    "name": "coolmacjedi/laravel-breadcrumbs-simple",
+    "name": "tradejedi/laravel-breadcrumbs-simple",
     "description": "Laravel breadcrumbs",
     "type": "library",
     "require": {
@@ -8,7 +8,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Coolmacjedi\\Breadcrumbs\\": "src/"
+            "TradeJedi\\Breadcrumbs\\": "src/"
         }
     },
     "minimum-stability": "stable"
