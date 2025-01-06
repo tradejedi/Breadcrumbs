@@ -1,6 +1,6 @@
 <?php
 
-namespace TradeJedi\Breadcrumbs\Providers;
+namespace TradeJedi\Breadcrumbs;
 
 use TradeJedi\Breadcrumbs\Contracts\BreadcrumbsContract;
 use TradeJedi\Breadcrumbs\Services\BreadcrumbsService;
