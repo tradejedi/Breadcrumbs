@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Providers;
+namespace TradeJedi\Breadcrumbs\Providers;
 
-use App\Contracts\BreadcrumbsContract;
-use App\Services\BreadcrumbsService;
+use TradeJedi\Breadcrumbs\Contracts\BreadcrumbsContract;
+use TradeJedi\Breadcrumbs\Services\BreadcrumbsService;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 

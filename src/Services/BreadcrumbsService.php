@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Services;
+namespace TradeJedi\Breadcrumbs\Services;
 
-use App\Contracts\BreadcrumbsContract;
 use Illuminate\Support\Facades\Route;
+use TradeJedi\Breadcrumbs\Contracts\BreadcrumbsContract;
 
 class BreadcrumbsService implements BreadcrumbsContract
 {

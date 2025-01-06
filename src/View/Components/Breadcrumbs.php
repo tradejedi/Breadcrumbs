@@ -1,9 +1,9 @@
 <?php
 
-namespace App\View\Components;
+namespace TradeJedi\Breadcrumbs\View\Components;
 
 use Illuminate\View\Component;
-use App\Contracts\BreadcrumbsContract;
+use TradeJedi\Breadcrumbs\Contracts\BreadcrumbsContract;
 
 class Breadcrumbs extends Component
 {
