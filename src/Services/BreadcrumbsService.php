@@ -13,10 +13,9 @@ class BreadcrumbsService implements BreadcrumbsContract
         $breadcrumbsConfig = config('breadcrumbs', []);
 
         $breadcrumbs = $breadcrumbsConfig[$routeName] ?? $breadcrumbsConfig['default'];
+        $breadcrumbs = $this->replaceRoutePlaceholders($breadcrumbs);
 
-        $parameters = Route::current()->parameters();
-
-        return $this->replacePlaceholders($breadcrumbs, $parameters);
+        return $this->replacePlaceholders($breadcrumbs, Route::current()->parameters());
     }
 
     /**
@@ -41,6 +40,19 @@ class BreadcrumbsService implements BreadcrumbsContract
         }, $breadcrumbs);
     }
 
+    protected function replaceRoutePlaceholders(array $breadcrumbs): array
+    {
+        return array_map(function ($crumb) {
+            if (isset($crumb['url'])) {
+                $crumb['url'] = preg_replace_callback('/\{route\.(.+?)\}/', function ($matches) {
+                    return Route::has($matches[1]) ? route($matches[1]) : '/';
+                }, $crumb['url']);
+            }
+            return $crumb;
+        }, $breadcrumbs);
+    }
+
+
     /**
      * Заменяет переменные в строке на основе параметров
      *
@@ -50,6 +62,7 @@ class BreadcrumbsService implements BreadcrumbsContract
      */
     protected function replaceVariables(string $text, array $parameters): string
     {
+        # TODO: добавить удаление не работающих плейсхолдеров
         foreach ($parameters as $key => $value) {
             if (is_object($value) && method_exists($value, '__toString')) {
                 $value = (string)$value;
