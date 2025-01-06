@@ -12,7 +12,7 @@ class BreadcrumbsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../../config/breadcrumbs.php', 'breadcrumbs');
-        $this->app->singleton(BreadcrumbsContract::class, BreadcrumbsService::class);
+        $this->app->bind(BreadcrumbsContract::class, BreadcrumbsService::class);
     }
 
     public function boot()
